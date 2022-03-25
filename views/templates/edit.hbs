@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            Edit question
+        </div>
+        <div class="card-body">
+            {{#each question}}
+                <form action="/question/edit/{{this.id}}" method="POST">
+                
+                    <div class="form-group">
+                        <label for="nombre">ID name</label>
+                        <input type="text" class="form-control" name="idname" id="idname" value="{{this.idname}}">
+                    </div> 
+                    <div class="form-group">
+                        <label for="apellido">name:</label>
+                        <input type="text" class="form-control" name="name" id="name" value="{{this.name}}">
+                    </div>  
+                    <div class="form-group">
+                        <label for="profesion">question:</label>
+                        <input type="text" class="form-control" name="question" id="question" value="{{this.question}}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-sm btn-success">save</button>
+                    </div>        
+                </form>
+            {{/each}}
+        </div>
+    </div>
+</div>

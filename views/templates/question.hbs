@@ -1,0 +1,32 @@
+<div class="mt-5 py-5 px-5">
+    <table class="table">
+        <thead style="background-color: blue; color: white;">
+            <tr>
+              <th scope="col">ID</th>    
+            <th scope="col">idname</th>
+            <th scope="col">name</th>
+            <th scope="col">question</th>
+                        {{!-- <th scope="col">edit</th> --}}
+
+          
+            </tr>
+        </thead>
+        <tbody>
+            {{#each question}}
+            <tr>
+            <th scope="row">{{this.id}}</th>
+            <td>{{this.idname}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.question}}</td>
+            
+            <td>
+                <a href="/question/edit/{{this.id}}" class="btn btn-sm btn-warning">edit</a>
+                <a href="/question/delete/{{this.id}}" class="btn btn-sm btn-danger">delete</a>
+            </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <a href="/question/add" class="btn btn-sm btn-primary" style="item-align: center; !important">add</a>
+</div>
